@@ -1,0 +1,17 @@
+// Serves this repo as a static site on Cloudflare.
+//
+// There is no server-side code here -- just the privacy policy and the email
+// confirmation page -- so there is no "main" entry. With assets alone, a
+// request that matches a file is served and anything else gets a 404.
+//
+// The directory is the repo root rather than a build output folder, because
+// GitHub Pages also serves this repo from the root and the old
+// randalllis.github.io/upc-privacy/ URL has to keep working: it is registered
+// as the privacy policy in Play Console.
+{
+  "name": "upc-privacy",
+  "compatibility_date": "2026-08-31",
+  "assets": {
+    "directory": "./"
+  }
+}
