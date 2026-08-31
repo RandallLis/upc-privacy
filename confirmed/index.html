@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email confirmed — UPC MMA</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: #141212;
+    color: #eee9df;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .mark {
+    width: 64px;
+    height: 64px;
+    margin: 24px auto 28px;
+    border-radius: 50%;
+    border: 2px solid #c22a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark svg { display: block; }
+  h1 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 12px;
+  }
+  p {
+    font-size: 16px;
+    margin: 0 0 14px;
+  }
+  .muted {
+    color: #6b655c;
+    font-size: 14px;
+  }
+  .rule {
+    border: 0;
+    border-top: 1px solid #2a2626;
+    margin: 36px 0 28px;
+  }
+  .fr h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #eee9df;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="mark">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+           stroke="#c22a2a" stroke-width="3" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <h1>Email confirmed</h1>
+    <p>Your email address has been verified.</p>
+    <p><strong>Open the UPC MMA app and sign in to finish setting up your account.</strong></p>
+    <p class="muted">You can close this page. If you confirmed on a computer,
+       just switch to the app on your phone — there is nothing else to do here.</p>
+
+    <hr class="rule">
+
+    <div class="fr">
+      <h2>Adresse courriel confirmée</h2>
+      <p>Votre adresse courriel a été vérifiée.</p>
+      <p><strong>Ouvrez l'application UPC MMA et connectez-vous pour terminer la configuration de votre compte.</strong></p>
+      <p class="muted">Vous pouvez fermer cette page. Si vous avez confirmé sur un
+         ordinateur, passez simplement à l'application sur votre téléphone.</p>
+    </div>
+  </div>
+
+<script>
+  // Supabase appends the session tokens as a URL fragment. Nothing on this page
+  // reads them, and leaving them in place puts an access token in the browser's
+  // address bar and history. Drop the fragment without adding a history entry.
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+</script>
+</body>
+</html>
